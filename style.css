@@ -6,7 +6,7 @@ body {
 }
 
 .wrapper.container {
-  height: 40vh;
+  height: 35vh;
   border-radius: 25px;
   background-image: url('./assets/img/word.jpg');
   text-align: center;
@@ -14,7 +14,7 @@ body {
 }
 
 .input {
-  margin-left: 33.32% !important;
+  margin-left: 41.65% !important;
   color: black;
   font-size: 36px;
   background-color: white;
