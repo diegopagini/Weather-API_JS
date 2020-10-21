@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link rel="icon" href="./assets/weather-icons/007-clouds and sun.png">
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
@@ -13,8 +15,36 @@
 
     <title>Weather API</title>
   </head>
+
   <body>
+    <header>
+      <div class="row section center">
+        <div class="col input s12 m4 l2 z-depth-2">
+          <input type="text" id="cp" placeholder="Codigo postal" value="" class="center">
+          <button class="btn" id="getWeather">Obtener Clima</button>
+        </div>
+      </div>
+    </header>
+    |
+    <main>
+
+      <div class="row">
+        <div class="col s12 m4">
+          <div class="wrapper container z-depth-4" id="wrapper">
+            <h3 id="city-name"></h1>
+            <h4 id=date></h4>
+            <h5 id="temp"></h5>
+            <h5 id="weather"></h5>
+            <h5 id="clouds"></h5>
+            <h5 id="rain"></h5>
+          </div>
+        </div>
+      </div>
+
+    </main>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
     <script src="main.js"></script>
   </body>
 </html>
