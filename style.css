@@ -1,8 +1,7 @@
-body {
+html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  height: 100vh;
   background-image: url('./assets/img/sunset.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -10,12 +9,23 @@ body {
   color: white;
 }
 
+body {
+  height: 100vh;
+}
+
+body, #getWeather {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
 #wrapper img {
   width: 300px;
 }
 
+#wrapper {
+  margin-left: 5%;
+}
+
 #cp, #getWeather, #wrapper {
-  background-color: rgba(0, 0, 0, 0.6);
   width: 100%;
   color: whitesmoke;
 }

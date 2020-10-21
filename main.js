@@ -23,12 +23,12 @@ function getCurrentWeather(postalCode) {
     document.getElementById('date').innerHTML = `HOY: ${currenDataTime[0].ob_time}`;
 
     document.getElementById('temp').innerHTML = `${temp} °`;
-    if(temp <= 20) {
-      document.getElementById('weather-icon').innerHTML = "<img src=\".\assets\weather-icons\001-thermometer.png\">"
+    if(temp <= 10) {
+      document.getElementById('weather-icon').innerHTML = "<img src=/./assets/weather-icons/001-thermometer.png\>"
     } else if (temp > 10 && temp <= 20) {
-      document.getElementById('weather-icon').innerHTML = "<img src=\"./assets/weather-icons/001-thermometer.png\">"
+      document.getElementById('weather-icon').innerHTML = "<img src=/./assets/weather-icons/012-sun.png\>"
     } else {
-      document.getElementById('weather-icon').innerHTML = "<img src=\"./assets/weather-icons/001-thermometer.png\">"
+      document.getElementById('weather-icon').innerHTML = "<img src=/./assets/weather-icons/026-thermometer.png\>"
     }
 
     document.getElementById('wind').innerHTML = `Viento ${wind} Km/h del ${currenDataTime[0].wind_cdir_full}`;
