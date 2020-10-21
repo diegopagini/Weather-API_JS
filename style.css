@@ -1,22 +1,35 @@
 body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   height: 100vh;
   background-image: url('./assets/img/sunset.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-.wrapper.container {
-  height: 35vh;
-  border-radius: 25px;
-  background-image: url('./assets/img/word.jpg');
-  text-align: center;
+  font-family: 'Lato', sans-serif;
   color: white;
 }
 
-.input {
-  margin-left: 41.65% !important;
-  color: black;
-  font-size: 36px;
-  background-color: white;
-  border-radius: 15px;
+#wrapper img {
+  width: 300px;
+}
+
+#cp, #getWeather, #wrapper {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  color: whitesmoke;
+}
+
+#city-name {
+  font-size: 70px;
+  text-decoration: underline;
+}
+
+#date {
+  text-transform: uppercase;
+  font-size: 45px;
+}
+
+#temp {
+  font-size: 90px;
 }

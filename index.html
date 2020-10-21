@@ -11,6 +11,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
 
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css" />
 
     <title>Weather API</title>
@@ -19,8 +21,8 @@
   <body>
     <header>
       <div class="row section center">
-        <div class="col input s12 m4 l2 z-depth-2">
-          <input type="text" id="cp" placeholder="Codigo postal" value="" class="center">
+        <div class="col input s12">
+          <input type="text" id="cp" placeholder="Ingresá el código postal de tu ciudad para obtener el clima" value="" class="center">
           <button class="btn" id="getWeather">Obtener Clima</button>
         </div>
       </div>
@@ -29,74 +31,16 @@
     <main>
 
       <div class="row">
-        <div class="col s12 m4">
-          <div class="wrapper container z-depth-4" id="wrapper">
+        <div class="col s12">
+          <div class="wrapper" id="wrapper">
+            <img id="weather-icon" src="./assets/weather-icons/007-clouds and sun.png" alt="weather-icon">
             <h3 id="city-name"></h1>
             <h4 id=date></h4>
             <h5 id="temp"></h5>
-            <h5 id="weather"></h5>
-            <h5 id="clouds"></h5>
-            <h5 id="rain"></h5>
+            <h5 id="wind"></h5>
+            <h5 id="rh"></h5>
           </div>
-        </div>
 
-        <div class="col s12 m4">
-          <div class="wrapper container z-depth-4" id="wrapper">
-            <h3 id="city-name"></h1>
-            <h4 id=date></h4>
-            <h5 id="temp"></h5>
-            <h5 id="weather"></h5>
-            <h5 id="clouds"></h5>
-            <h5 id="rain"></h5>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="wrapper container z-depth-4" id="wrapper">
-            <h3 id="city-name"></h1>
-            <h4 id=date></h4>
-            <h5 id="temp"></h5>
-            <h5 id="weather"></h5>
-            <h5 id="clouds"></h5>
-            <h5 id="rain"></h5>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="wrapper container z-depth-4" id="wrapper">
-            <h3 id="city-name"></h1>
-            <h4 id=date></h4>
-            <h5 id="temp"></h5>
-            <h5 id="weather"></h5>
-            <h5 id="clouds"></h5>
-            <h5 id="rain"></h5>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="wrapper container z-depth-4" id="wrapper">
-            <h3 id="city-name"></h1>
-            <h4 id=date></h4>
-            <h5 id="temp"></h5>
-            <h5 id="weather"></h5>
-            <h5 id="clouds"></h5>
-            <h5 id="rain"></h5>
-          </div>
-        </div>
-
-        <div class="col s12 m4">
-          <div class="wrapper container z-depth-4" id="wrapper">
-            <h3 id="city-name"></h1>
-            <h4 id=date></h4>
-            <h5 id="temp"></h5>
-            <h5 id="weather"></h5>
-            <h5 id="clouds"></h5>
-            <h5 id="rain"></h5>
-          </div>
-        </div>
-      </div>
 
     </main>
     

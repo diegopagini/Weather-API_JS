@@ -14,14 +14,27 @@ function getCurrentWeather(postalCode) {
     let currenDataTime = dataWeather.data;
     console.log(currenDataTime);
 
+    let wind = (currenDataTime[0].wind_spd).toFixed(2)
+    let temp = currenDataTime[0].temp;
+    //Puedo hacer esto mismo dentro de los `` ?
+
     document.getElementById('city-name').innerHTML = currenDataTime[0].city_name;
-    document.getElementById('date').innerHTML = currenDataTime[0].datetime;
-    document.getElementById('temp').innerHTML = `Temperatura: ${currenDataTime[0].temp}`;
-    document.getElementById('weather').innerHTML = `Clima: ${currenDataTime[0].weather.description}`;
-    document.getElementById('clouds').innerHTML = `Nubes: ${currenDataTime[0].clouds}`;
-    document.getElementById('rain').innerHTML = `Lluvia: ${currenDataTime[0].precip}`;
 
+    document.getElementById('date').innerHTML = `HOY: ${currenDataTime[0].ob_time}`;
 
+    document.getElementById('temp').innerHTML = `${temp} °`;
+    if(temp <= 20) {
+      document.getElementById('weather-icon').innerHTML = "<img src=\".\assets\weather-icons\001-thermometer.png\">"
+    } else if (temp > 10 && temp <= 20) {
+      document.getElementById('weather-icon').innerHTML = "<img src=\"./assets/weather-icons/001-thermometer.png\">"
+    } else {
+      document.getElementById('weather-icon').innerHTML = "<img src=\"./assets/weather-icons/001-thermometer.png\">"
+    }
+
+    document.getElementById('wind').innerHTML = `Viento ${wind} Km/h del ${currenDataTime[0].wind_cdir_full}`;
+
+    document.getElementById('rh').innerHTML = `Humedad del ${currenDataTime[0].rh} %`;
+    
   })
 }
 
