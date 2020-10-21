@@ -24,13 +24,17 @@ function getCurrentWeather(postalCode) {
       let temp = currenDataTime[0].temp;
       //Puedo hacer esto mismo dentro de los `` ?
 
+
+      //Imprimo el nombre de la ciudad
       document.getElementById("city-name").innerHTML =
         currenDataTime[0].city_name;
 
+      //Imprimo la fecha de la ciudad
       document.getElementById(
         "date"
       ).innerHTML = `HOY: ${currenDataTime[0].ob_time}`;
 
+      //Imprimo el clima, y la idea es que si el clima tiene una determinada temperatura, me muestre un icono diferente.
       document.getElementById("temp").innerHTML = `${temp} °`;
       if (temp <= 10) {
         document.getElementById("weather-icon").innerHTML = `<img src=${cold}>`;
@@ -42,15 +46,18 @@ function getCurrentWeather(postalCode) {
         document.getElementById("weather-icon").innerHTML = `<img src=${hot}>`;
       }
 
+      //Imprimo la velocidad del viendo, y la direccion.
       document.getElementById(
         "wind"
       ).innerHTML = `Viento ${wind} Km/h del ${currenDataTime[0].wind_cdir_full}`;
 
+      //Imprimo la humedad
       document.getElementById(
         "rh"
       ).innerHTML = `Humedad del ${currenDataTime[0].rh} %`;
     });
 }
+
 
 document.getElementById("getWeather").addEventListener("click", function () {
   postalCode = document.getElementById("cp").value;
