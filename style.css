@@ -2,18 +2,20 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-image: url('./assets/img/sunset.jpg');
+  background-image: url("./assets/img/sunset.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   color: white;
 }
 
 body {
   height: 100vh;
+  overflow: hidden;
 }
 
-body, #getWeather {
+body,
+#getWeather {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
@@ -25,7 +27,9 @@ body, #getWeather {
   margin-left: 5%;
 }
 
-#cp, #getWeather, #wrapper {
+#cp,
+#getWeather,
+#wrapper {
   width: 100%;
   color: whitesmoke;
 }
