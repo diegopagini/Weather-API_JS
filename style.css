@@ -2,11 +2,12 @@ html {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-image: url("./assets/img/sunset.jpg");
+  /*background-image: url("./assets/img/sunset.jpg");*/
   background-repeat: no-repeat;
   background-size: cover;
   font-family: "Lato", sans-serif;
   color: white;
+  background-color: black;
 }
 
 body {
