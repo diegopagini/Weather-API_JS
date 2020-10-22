@@ -36,15 +36,17 @@ function getCurrentWeather(postalCode) {
 
       //Imprimo el clima, y la idea es que si el clima tiene una determinada temperatura, me muestre un icono diferente.
       document.getElementById("temp").innerHTML = `${temp} °`;
+      
+      let iconFinal = ''
       if (temp <= 10) {
-        document.getElementById("weather-icon").innerHTML = `<img src=${cold}>`;
+        iconFinal = cold;
       } else if (temp > 10 && temp <= 20) {
-        document.getElementById(
-          "weather-icon"
-        ).innerHTML = `<img src=${normal}>`;
+        iconFinal = normal;
       } else {
-        document.getElementById("weather-icon").innerHTML = `<img src=${hot}>`;
+        iconFinal =hot;
       }
+
+      document.getElementById("weatherIcon").innerHTML = `<img src="${iconFinal}">`;
 
       //Imprimo la velocidad del viendo, y la direccion.
       document.getElementById(
