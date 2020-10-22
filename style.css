@@ -19,8 +19,12 @@ body,
   background-color: rgba(0, 0, 0, 0.6);
 }
 
+main {
+  margin-top: -100px;
+}
+
 #wrapper img {
-  width: 300px;
+  width: 250px;
 }
 
 #wrapper {
@@ -36,7 +40,6 @@ body,
 
 #city-name {
   font-size: 70px;
-  text-decoration: underline;
 }
 
 #date {
