@@ -1,7 +1,7 @@
 // API
 const API = "https://api.weatherbit.io/v2.0/current";
-const KEY = "?key=f3acb947fe9a4601aaca23a79e0e7bb4";
-let CP = "&postal_code=${postalCode}";
+const KEY = "f3acb947fe9a4601aaca23a79e0e7bb4";
+let CP = `&postal_code=`;
 // fetch(`${API}${KEY}${CP}`) esto asi no anduvo
 
 let postalCode = 7600;
@@ -12,9 +12,11 @@ let normal = "./assets/weather-icons/012-sun.png";
 let hot = "./assets/weather-icons/026-thermometer.png";
 
 function getCurrentWeather(postalCode) {
-  dataEndpoint = fetch(
+
+  /*dataEndpoint = fetch(
     `https://api.weatherbit.io/v2.0/current?key=f3acb947fe9a4601aaca23a79e0e7bb4&postal_code=${postalCode}`
-  )
+  )*/
+  dataEndpoint = fetch(`${API}?key=${KEY}${CP}${postalCode}`)
     .then((response) => response.json())
     .then((dataWeather) => {
       let currenDataTime = dataWeather.data;
