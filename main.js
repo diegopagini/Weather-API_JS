@@ -2,7 +2,6 @@
 const API = "https://api.weatherbit.io/v2.0/current";
 const KEY = "f3acb947fe9a4601aaca23a79e0e7bb4";
 let CP = `&postal_code=`;
-// fetch(`${API}${KEY}${CP}`) esto asi no anduvo
 
 let postalCode = 7600;
 getCurrentWeather(postalCode);
@@ -13,9 +12,6 @@ let hot = "./assets/weather-icons/026-thermometer.png";
 
 function getCurrentWeather(postalCode) {
 
-  /*dataEndpoint = fetch(
-    `https://api.weatherbit.io/v2.0/current?key=f3acb947fe9a4601aaca23a79e0e7bb4&postal_code=${postalCode}`
-  )*/
   dataEndpoint = fetch(`${API}?key=${KEY}${CP}${postalCode}`)
     .then((response) => response.json())
     .then((dataWeather) => {
@@ -24,8 +20,6 @@ function getCurrentWeather(postalCode) {
 
       let wind = currenDataTime[0].wind_spd.toFixed(2);
       let temp = currenDataTime[0].temp;
-      //Puedo hacer esto mismo dentro de los `` ?
-
 
       //Imprimo el nombre de la ciudad
       document.getElementById("city-name").innerHTML =
@@ -43,7 +37,7 @@ function getCurrentWeather(postalCode) {
       } else if (temp > 10 && temp <= 20) {
         document.getElementById(
           "weather-icon"
-        ).innerHTML = `<img src=${normal}>`;
+        ).innerHTML = `<img src=${normal}>`; 
       } else {
         document.getElementById("weather-icon").innerHTML = `<img src=${hot}>`;
       }
