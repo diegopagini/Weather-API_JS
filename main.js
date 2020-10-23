@@ -1,61 +1,84 @@
-// API
-const API = "https://api.weatherbit.io/v2.0/current";
-const KEY = "f3acb947fe9a4601aaca23a79e0e7bb4";
-let CP = `&postal_code=`;
+const APIkey = "9eec655c6fd34430a775dd9fd71dd384"
 
-let postalCode = 7600;
-getCurrentWeather(postalCode);
+function getApi(CP) {
+  apiData = fetch(`https://api.weatherbit.io/v2.0/forecast/daily?key=${APIkey}&postal_code=${CP}`)
+  .then((response) => response.json())
+  .then((data) => {
+    currentData = data.data
+    console.log(currentData)
+    showDate(0, 'cp')
+    showTemp(0, 'temp')
+    showRH(0, 'rh')
+    showClouds(0, 'clouds')
+    showRain(0, 'rain')
+    showMaxTemp(0, 'max')
+    showMinTemp(0, 'min')
+    showDate(1,'dateFirst')
+    showTemp(1, 'tempFirst')
+    showDate(2, 'dateSecond')
+    showTemp(2, 'tempSecond')
+    showDate(3, 'dateThird')
+    showTemp(3, 'tempThird')
+    showDate(4, 'dateFourth')
+    showTemp(4, 'tempFourth')
+    showDate(5, 'dateFifth')
+    showTemp(5, 'tempFifth')
+  })
+}
+getApi(7600)
 
-let cold = "./assets/weather-icons/001-thermometer.png";
-let normal = "./assets/weather-icons/012-sun.png";
-let hot = "./assets/weather-icons/026-thermometer.png";
-
-function getCurrentWeather(postalCode) {
-
-  dataEndpoint = fetch(`${API}?key=${KEY}${CP}${postalCode}`)
-    .then((response) => response.json())
-    .then((dataWeather) => {
-      let currenDataTime = dataWeather.data;
-      console.log(currenDataTime);
-
-      let wind = currenDataTime[0].wind_spd.toFixed(2);
-      let temp = currenDataTime[0].temp;
-
-      //Imprimo el nombre de la ciudad
-      document.getElementById("city-name").innerHTML =
-        currenDataTime[0].city_name;
-
-      //Imprimo la fecha de la ciudad
-      document.getElementById(
-        "date"
-      ).innerHTML = `HOY: ${currenDataTime[0].ob_time}`;
-
-      //Imprimo el clima, y la idea es que si el clima tiene una determinada temperatura, me muestre un icono diferente.
-      document.getElementById("temp").innerHTML = `${temp} °`;
-      if (temp <= 10) {
-        document.getElementById("weather-icon").innerHTML = `<img src=${cold}>`;
-      } else if (temp > 10 && temp <= 20) {
-        document.getElementById(
-          "weather-icon"
-        ).innerHTML = `<img src=${normal}>`; 
-      } else {
-        document.getElementById("weather-icon").innerHTML = `<img src=${hot}>`;
-      }
-
-      //Imprimo la velocidad del viendo, y la direccion.
-      document.getElementById(
-        "wind"
-      ).innerHTML = `Viento ${wind} Km/h del ${currenDataTime[0].wind_cdir_full}`;
-
-      //Imprimo la humedad
-      document.getElementById(
-        "rh"
-      ).innerHTML = `Humedad del ${currenDataTime[0].rh} %`;
-    });
+//Mostrar fecha actual
+function showDate(i, id){
+  cp = `
+    <h3>${currentData[i].datetime}</h3>
+  `
+  document.getElementById(id).innerHTML = cp;
 }
 
+//Mostrar temperatura actual
+function showTemp(i, id){
+  temp = `
+  <h2 class="center">${currentData[i].temp} °</h2>
+  `
+  document.getElementById(id).innerHTML = temp;
+}
 
-document.getElementById("getWeather").addEventListener("click", function () {
-  postalCode = document.getElementById("cp").value;
-  getCurrentWeather(postalCode);
-});
+//Mostrar la humedad actual
+function showRH(i, id){
+  rh = `
+  ${currentData[i].rh} % de humedad
+  `
+  document.getElementById(id).innerHTML = rh;
+}
+
+//Mostrar la nobosidad actual
+function showClouds(i, id){
+  clouds = `
+  ${currentData[i].clouds} % de nubosidad
+  `
+  document.getElementById(id).innerHTML = clouds;
+}
+
+//Mostrar la probabilidad de lluvia actual
+function showRain(i, id){
+  rain = `
+  ${currentData[i].precip} % de que llueva
+  `
+  document.getElementById(id).innerHTML = rain;
+}
+
+//Mostrar la temperatura maxima
+function showMaxTemp(i, id){
+  max = `
+  ${currentData[i].app_max_temp} ° de máxima
+  `
+  document.getElementById(id).innerHTML = max;
+}
+
+//Mostrar la temperatura minima
+function showMinTemp(i, id){
+  min = `
+  ${currentData[i].app_min_temp} ° de mínima
+  `
+  document.getElementById(id).innerHTML = min;
+}

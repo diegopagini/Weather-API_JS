@@ -1,52 +1,75 @@
-html {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-image: url("./assets/img/sunset.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-family: "Lato", sans-serif;
-  color: white;
+}
+
+html {
+  background-image: url('./assets/img/mdp.jpg');
+  background-attachment: fixed;
+
 }
 
 body {
-  height: 100vh;
-  overflow: hidden;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  color: white;
+  text-align: center;
 }
 
-body,
-#getWeather {
-  background-color: rgba(0, 0, 0, 0.6);
+header {
+  position: relative;
+  top: 0;
+  height: 100%;
 }
 
 main {
-  margin-top: -100px;
+  height: 100%;
+  text-align: left;
+  font-weight: 700;
+
 }
 
-#wrapper img {
-  width: 250px;
+footer {
+  height: 100%;
+  margin-top: 10vh;
+  bottom: 0;
+
 }
 
-#wrapper {
-  margin-left: 5%;
+.row-center {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
 
-#cp,
-#getWeather,
-#wrapper {
+.col-s12-m2 {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-width: 200px;
+  text-align: center;
+  background-color: rgba(266, 266, 266, 0.3);
+  border-radius: 25px;
+  margin-bottom: 20px;
+}
+
+span {
+  font-size: 26px;
+}
+
+.rain-container {
+  display: flex;
+}
+
+.title {
+  font-weight: 700;
+}
+
+.extendido {
   width: 100%;
-  color: whitesmoke;
-}
-
-#city-name {
-  font-size: 70px;
-}
-
-#date {
-  text-transform: uppercase;
-  font-size: 45px;
-}
-
-#temp {
-  font-size: 90px;
+  margin-left: 30%;
 }
